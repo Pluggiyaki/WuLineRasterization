@@ -20,12 +20,30 @@ public class RasterizationController {
         anchorPane.prefWidthProperty().addListener((ov, oldValue, newValue) -> canvas.setWidth(newValue.doubleValue()));
         anchorPane.prefHeightProperty().addListener((ov, oldValue, newValue) -> canvas.setHeight(newValue.doubleValue()));
 
-        Rasterization.drawRectangle(canvas.getGraphicsContext2D(), 200, 300, 200, 100, Color.CHOCOLATE);
-        Rasterization.drawRectangle(canvas.getGraphicsContext2D(), 250, 250, 50, 200, Color.AQUA);
+        GraphicsContext gc = canvas.getGraphicsContext2D();
+        gc.setFill(Color.WHITE);
+        gc.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
 
-        WuLineAlgorithm.drawWuLine(canvas.getGraphicsContext2D(), 50, 50, 200, 100, Color.RED);
+        // ТЕСТЫ АЛГОРИТМА ВУ:
 
-        WuLineAlgorithm.drawWuLine(canvas.getGraphicsContext2D(), 300, 50, 500, 200, Color.RED, Color.BLUE);
+        // 1. Простая линия (один цвет)
+        WuLineAlgorithm.drawWuLine(gc, 50, 50, 200, 100, Color.RED);
+
+        // 2. Линия с градиентом цвета
+        WuLineAlgorithm.drawWuLine(gc, 50, 150, 250, 200, Color.RED, Color.BLUE);
+
+        // 3. Вертикальная линия
+        WuLineAlgorithm.drawWuLine(gc, 300, 50, 300, 200, Color.GREEN);
+
+        // 4. Горизонтальная линия
+        WuLineAlgorithm.drawWuLine(gc, 350, 100, 500, 100, Color.PURPLE);
+
+        // 5. Линия под углом с градиентом
+        WuLineAlgorithm.drawWuLine(gc, 400, 50, 550, 180, Color.ORANGE, Color.CYAN);
+
+        // 6. Крутая линия
+        WuLineAlgorithm.drawWuLine(gc, 100, 250, 150, 400, Color.BROWN);
+
     }
 
 }
