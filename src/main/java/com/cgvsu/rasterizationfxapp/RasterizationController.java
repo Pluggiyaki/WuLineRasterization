@@ -24,6 +24,8 @@ public class RasterizationController {
         Rasterization.drawRectangle(canvas.getGraphicsContext2D(), 250, 250, 50, 200, Color.AQUA);
 
         WuLineAlgorithm.drawWuLine(canvas.getGraphicsContext2D(), 50, 50, 200, 100, Color.RED);
+
+        WuLineAlgorithm.drawWuLine(canvas.getGraphicsContext2D(), 300, 50, 500, 200, Color.RED, Color.BLUE);
     }
 
 }
