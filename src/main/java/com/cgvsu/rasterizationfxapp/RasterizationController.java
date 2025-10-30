@@ -44,9 +44,6 @@ public class RasterizationController {
         // 6. Крутая линия
         WuLineAlgorithm.drawWuLine(gc, 100, 250, 150, 400, Color.BROWN);
 
-        WuLineAlgorithm.drawWuLine(gc, 600, 50, 600, 300, Color.MAGENTA);
-        WuLineAlgorithm.drawWuLine(gc, 620, 300, 620, 50, Color.DARKGREEN); // обратное направление
-
     }
 
 }
